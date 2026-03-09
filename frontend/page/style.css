@@ -238,3 +238,343 @@ body {
     transform: scale(1.05);
     border: 2px solid red;
 }
+
+/* AGENDAMENTO */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* BODY */
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #0b0b0b;
+    color: white;
+}
+
+/* CONTAINER PRINCIPAL */
+
+.agendamento-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 40px 20px;
+}
+
+/* TITULOS */
+
+.agendamento h1 {
+    font-size: 38px;
+    margin-bottom: 10px;
+}
+
+.agendamento h2 {
+    margin-top: 40px;
+    margin-bottom: 20px;
+    font-size: 26px;
+}
+
+/* TEXTO */
+
+.agendamento p {
+    color: #ccc;
+    max-width: 700px;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+/* BOTÃO */
+
+.btn {
+    display: inline-block;
+    background: red;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    margin-top: 10px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #cc0000;
+}
+
+/* CARDS */
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+/* CARD INDIVIDUAL */
+
+.card {
+    background: #1a1a1a;
+    padding: 25px;
+    border-radius: 12px;
+    text-align: center;
+    transition: 0.3s;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* TITULO CARD */
+
+.card h3 {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+/* TEXTO CARD */
+
+.card p {
+    font-size: 14px;
+    color: #ccc;
+    line-height: 1.5;
+}
+
+/* PLANOS */
+
+.planos-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.planos-header h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.planos-header p {
+    color: #bbb;
+}
+
+.planos-container {
+    display: flex;
+    gap: 30px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.plano-card {
+    background: #1a1a1a;
+    padding: 30px;
+    border-radius: 12px;
+    width: 250px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    transition: 0.3s;
+}
+
+.plano-card:hover {
+    transform: translateY(-5px);
+}
+
+.plano-card h3 {
+    margin-bottom: 15px;
+}
+
+.plano-card p {
+    margin: 5px 0;
+    color: #ccc;
+}
+
+.preco {
+    display: block;
+    font-size: 24px;
+    font-weight: bold;
+    margin: 15px 0;
+    color: #ff3c3c;
+}
+
+.preco-antigo {
+    text-decoration: line-through;
+    color: #888;
+    margin-right: 10px;
+}
+
+.preco {
+    color: red;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.btn-plano {
+    display: inline-block;
+    background: red;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+}
+
+.btn-plano:hover {
+    background: #cc0000;
+}
+
+.destaque {
+    border: 2px solid red;
+}
+
+/* cadrato*/
+/* SEÇÃO CADASTRO */
+
+.cadastro {
+    max-width: 600px;
+    margin: 60px auto;
+    padding: 30px;
+    background: #1a1a1a;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+/* TITULO */
+
+.cadastro h2 {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+/* FORM */
+
+.cadastro form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* LABEL */
+
+.cadastro label {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+/* INPUT */
+
+.cadastro input {
+    padding: 10px;
+    border-radius: 6px;
+    border: none;
+    outline: none;
+}
+
+/* BOTÃO */
+
+.cadastro button {
+    margin-top: 20px;
+    padding: 12px;
+    background: red;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.cadastro button:hover {
+    background: #cc0000;
+}
+
+/* SEÇÃO INSCRIÇÃO */
+
+.inscricao {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #0f0f0f;
+    padding: 20px;
+}
+
+/* CONTAINER */
+
+.inscricao-container {
+    background: #1a1a1a;
+    padding: 40px;
+    border-radius: 12px;
+    max-width: 500px;
+    width: 100%;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+}
+
+/* TITULO */
+
+.inscricao-container h1 {
+    margin-bottom: 10px;
+    font-size: 30px;
+}
+
+/* TEXTO */
+
+.inscricao-container p {
+    color: #ccc;
+    margin-bottom: 25px;
+}
+
+/* FORMULÁRIO */
+
+.form-inscricao {
+    display: flex;
+    flex-direction: column;
+}
+
+/* LABEL */
+
+.form-inscricao label {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+/* INPUT E SELECT */
+
+.form-inscricao input,
+.form-inscricao select {
+    padding: 10px;
+    border-radius: 6px;
+    border: none;
+    outline: none;
+}
+
+/* BOTÃO */
+
+.btn-finalizar {
+    margin-top: 20px;
+    padding: 12px;
+    background: red;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-finalizar:hover {
+    background: #cc0000;
+}
+
+/* BOTÃO VOLTAR */
+
+.voltar {
+    display: block;
+    margin-top: 20px;
+    text-decoration: none;
+    color: #aaa;
+    font-size: 14px;
+}
+
+.voltar:hover {
+    color: white;
+}
