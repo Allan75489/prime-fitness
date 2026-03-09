@@ -21,7 +21,7 @@
                 e começar sua jornada rumo a uma vida mais saudável.
             </p>
 
-            <form class="form-inscricao">
+            <form class="form-inscricao" onsubmit="confirmarInscricao(event)">
 
                 <label>Nome completo</label>
                 <input type="text" placeholder="Digite seu nome" required>
@@ -42,24 +42,82 @@
                 </select>
 
                 <label>Forma de pagamento</label>
-                <select required>
+                <select id="pagamento" required>
                     <option value="">Escolha a forma de pagamento</option>
-                    <option>Pix</option>
-                    <option>Cartão de Crédito</option>
-                    <option>Cartão de Débito</option>
+                    <option value="pix">Pix</option>
+                    <option value="credito">Cartão de Crédito</option>
+                    <option value="debito">Cartão de Débito</option>
                 </select>
+
+                <div id="area-pagamento"></div>
 
                 <button type="submit" class="btn-finalizar">
                     Finalizar inscrição
                 </button>
 
+                <div id="notificacao" class="notificacao">
+                    ✅ Pagamento aprovado! Inscrição confirmada.
+                </div>
+
             </form>
 
             <a href="planos.html" class="voltar">← Voltar para os planos</a>
+            <a href="home.html" class="voltar">← Voltar para a página inicial</a>
 
         </div>
 
     </section>
+
+    <script>
+
+        const pagamento = document.getElementById("pagamento")
+        const area = document.getElementById("area-pagamento")
+
+        pagamento.addEventListener("change", function () {
+
+            let metodo = pagamento.value
+
+            if (metodo === "pix") {
+                area.innerHTML = `
+<p> use a chave PIX:</p>
+<strong>primefitness@pix.com</strong>
+`
+            }
+
+            if (metodo === "credito") {
+                area.innerHTML = `
+<label>Número do cartão</label>
+<input type="text" placeholder="0000 0000 0000 0000">
+
+<label>Validade</label>
+<input type="text" placeholder="MM/AA">
+
+<label>CVV</label>
+<input type="text" placeholder="123">
+`
+            }
+
+            if (metodo === "debito") {
+                area.innerHTML = `
+<label>Número do cartão</label>
+<input type="text" placeholder="0000 0000 0000 0000">
+
+<label>Senha</label>
+<input type="password" placeholder="****">
+`
+            }
+
+        })
+
+        function confirmarInscricao(event) {
+
+            event.preventDefault()
+
+            document.getElementById("notificacao").style.display = "block"
+
+        }
+
+    </script>
 
 </body>
 
