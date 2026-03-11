@@ -1,0 +1,202 @@
+/* =========================
+RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #0f0f0f;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
+
+/* =========================
+CONTAINER PADRÃO
+========================= */
+
+.container {
+    max-width: 900px;
+    margin: 60px auto;
+    padding: 40px;
+    background: #1a1a1a;
+    border-radius: 12px;
+}
+
+.container h1 {
+    font-size: 36px;
+    color: #ff4500;
+    margin-bottom: 20px;
+}
+
+.container h2 {
+    margin-top: 30px;
+    margin-bottom: 15px;
+    color: #ff4500;
+}
+
+.container p {
+    line-height: 1.7;
+    color: #ddd;
+    margin-bottom: 20px;
+}
+
+/* =========================
+ARTIGOS DO BLOG
+========================= */
+
+.artigo {
+    max-width: 800px;
+    margin: 60px auto;
+    padding: 30px;
+    background: #1a1a1a;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.artigo h1 {
+    font-size: 32px;
+    color: #ff6a00;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.artigo h2 {
+    font-size: 22px;
+    margin-top: 25px;
+    margin-bottom: 10px;
+    color: #ff6a00;
+}
+
+.artigo p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    color: #ddd;
+}
+
+.artigo ul {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    padding-left: 20px;
+}
+
+.artigo li {
+    margin-bottom: 8px;
+    color: #ddd;
+}
+
+/* =========================
+CAIXA DE DESTAQUE
+========================= */
+
+.destaque {
+    background: #111;
+    border-left: 5px solid #ff4500;
+    padding: 20px;
+    border-radius: 6px;
+    margin: 25px 0;
+}
+
+/* =========================
+CARDS DE ALIMENTOS
+========================= */
+
+.card-alimento {
+    background: #111;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px 0;
+    border-left: 5px solid #ff4500;
+}
+
+.card-alimento h3 {
+    color: #ff4500;
+    margin-bottom: 10px;
+}
+
+.card-alimento ul {
+    margin-left: 20px;
+}
+
+.card-alimento li {
+    margin-bottom: 6px;
+    color: #ddd;
+}
+
+/* =========================
+CARDS PRÓS E CONTRAS
+========================= */
+
+.cards {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.card-pros,
+.card-contras {
+    flex: 1;
+    min-width: 250px;
+    background: #111;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.card-pros {
+    border-left: 5px solid #00c853;
+}
+
+.card-contras {
+    border-left: 5px solid #ff3d00;
+}
+
+.card-pros h2 {
+    color: #00e676;
+    margin-bottom: 10px;
+}
+
+.card-contras h2 {
+    color: #ff5252;
+    margin-bottom: 10px;
+}
+
+/* =========================
+LISTAS
+========================= */
+
+ul {
+    margin-left: 20px;
+}
+
+li {
+    margin-bottom: 8px;
+    color: #ddd;
+}
+
+/* =========================
+BOTÕES
+========================= */
+
+.container a,
+.artigo a,
+.btn-voltar {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 12px 25px;
+    background: #ff4500;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.container a:hover,
+.artigo a:hover,
+.btn-voltar:hover {
+    background: #e03d00;
+}
