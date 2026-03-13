@@ -9,9 +9,9 @@ RESET
 }
 
 body {
-    background: #0f0f0f;
+    background: #0a0f1c;
     font-family: Arial, Helvetica, sans-serif;
-    color: white;
+    color: #e5e7eb;
 }
 
 /* =========================
@@ -22,25 +22,25 @@ CONTAINER PADRÃO
     max-width: 900px;
     margin: 60px auto;
     padding: 40px;
-    background: #1a1a1a;
+    background: #111827;
     border-radius: 12px;
 }
 
 .container h1 {
     font-size: 36px;
-    color: #ff4500;
+    color: #00d4ff;
     margin-bottom: 20px;
 }
 
 .container h2 {
     margin-top: 30px;
     margin-bottom: 15px;
-    color: #ff4500;
+    color: #00d4ff;
 }
 
 .container p {
     line-height: 1.7;
-    color: #ddd;
+    color: #9ca3af;
     margin-bottom: 20px;
 }
 
@@ -52,14 +52,14 @@ ARTIGOS DO BLOG
     max-width: 800px;
     margin: 60px auto;
     padding: 30px;
-    background: #1a1a1a;
+    background: #111827;
     border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 15px rgba(0, 212, 255, 0.1);
 }
 
 .artigo h1 {
     font-size: 32px;
-    color: #ff6a00;
+    color: #00d4ff;
     margin-bottom: 20px;
     text-align: center;
 }
@@ -68,14 +68,14 @@ ARTIGOS DO BLOG
     font-size: 22px;
     margin-top: 25px;
     margin-bottom: 10px;
-    color: #ff6a00;
+    color: #00d4ff;
 }
 
 .artigo p {
     font-size: 16px;
     line-height: 1.6;
     margin-bottom: 15px;
-    color: #ddd;
+    color: #9ca3af;
 }
 
 .artigo ul {
@@ -86,7 +86,7 @@ ARTIGOS DO BLOG
 
 .artigo li {
     margin-bottom: 8px;
-    color: #ddd;
+    color: #9ca3af;
 }
 
 /* =========================
@@ -94,8 +94,8 @@ CAIXA DE DESTAQUE
 ========================= */
 
 .destaque {
-    background: #111;
-    border-left: 5px solid #ff4500;
+    background: #0f172a;
+    border-left: 5px solid #00d4ff;
     padding: 20px;
     border-radius: 6px;
     margin: 25px 0;
@@ -106,15 +106,15 @@ CARDS DE ALIMENTOS
 ========================= */
 
 .card-alimento {
-    background: #111;
+    background: #0f172a;
     padding: 20px;
     border-radius: 10px;
     margin: 20px 0;
-    border-left: 5px solid #ff4500;
+    border-left: 5px solid #00d4ff;
 }
 
 .card-alimento h3 {
-    color: #ff4500;
+    color: #00d4ff;
     margin-bottom: 10px;
 }
 
@@ -124,7 +124,7 @@ CARDS DE ALIMENTOS
 
 .card-alimento li {
     margin-bottom: 6px;
-    color: #ddd;
+    color: #9ca3af;
 }
 
 /* =========================
@@ -141,26 +141,26 @@ CARDS PRÓS E CONTRAS
 .card-contras {
     flex: 1;
     min-width: 250px;
-    background: #111;
+    background: #0f172a;
     padding: 20px;
     border-radius: 10px;
 }
 
 .card-pros {
-    border-left: 5px solid #00c853;
+    border-left: 5px solid #22c55e;
 }
 
 .card-contras {
-    border-left: 5px solid #ff3d00;
+    border-left: 5px solid #ef4444;
 }
 
 .card-pros h2 {
-    color: #00e676;
+    color: #22c55e;
     margin-bottom: 10px;
 }
 
 .card-contras h2 {
-    color: #ff5252;
+    color: #ef4444;
     margin-bottom: 10px;
 }
 
@@ -174,7 +174,7 @@ ul {
 
 li {
     margin-bottom: 8px;
-    color: #ddd;
+    color: #9ca3af;
 }
 
 /* =========================
@@ -187,16 +187,18 @@ BOTÕES
     display: inline-block;
     margin-top: 25px;
     padding: 12px 25px;
-    background: #ff4500;
-    color: white;
+    background: #00d4ff;
+    color: #0a0f1c;
     text-decoration: none;
     border-radius: 6px;
     font-weight: bold;
     transition: 0.3s;
+    box-shadow: 0 0 10px #00d4ff;
 }
 
 .container a:hover,
 .artigo a:hover,
 .btn-voltar:hover {
-    background: #e03d00;
+    background: #2563eb;
+    box-shadow: 0 0 20px #00d4ff;
 }

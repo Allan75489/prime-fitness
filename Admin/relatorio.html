@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Relatórios | PRIME FITNESS</title>
+
+    <link rel="stylesheet" href="dashboard.css">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+
+        <div class="sidebar-header">
+            <h3 class="brand">
+                <span class="material-icons">fitness_center</span>
+                PRIME FITNESS
+            </h3>
+        </div>
+
+        <div class="sidebar-menu">
+
+            <ul>
+
+                <li>
+                    <a href="dashboard.html">
+                        <span class="material-icons">dashboard</span>
+                        Dashboard
+                    </a>
+                </li>
+
+                <li>
+                    <a href="clientes.html">
+                        <span class="material-icons">group</span>
+                        Clientes
+                    </a>
+                </li>
+
+                <li>
+                    <a href="planos.html">
+                        <span class="material-icons">assignment</span>
+                        Planos
+                    </a>
+                </li>
+
+                <li>
+                    <a href="treinadores.html">
+                        <span class="material-icons">sports_gymnastics</span>
+                        Treinadores
+                    </a>
+                </li>
+
+                <li>
+                    <a href="pagamentos.html">
+                        <span class="material-icons">payments</span>
+                        Pagamentos
+                    </a>
+                </li>
+
+                <li>
+                    <a href="relatorios.html" class="active">
+                        <span class="material-icons">bar_chart</span>
+                        Relatórios
+                    </a>
+                </li>
+
+                <li>
+                    <a href="configuracoes.html">
+                        <span class="material-icons">settings</span>
+                        Configurações
+                    </a>
+                </li>
+
+                <li>
+                    <a href="../index.html">
+                        <span class="material-icons">home</span>
+                        Home
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+    </div>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+
+    <div class="main-content">
+
+        <header>
+
+            <div class="user-greeting">
+                Relatórios da Academia
+            </div>
+
+        </header>
+
+        <!-- CARDS -->
+
+        <section class="dashboard-cards">
+
+            <div class="card">
+                <h4>Faturamento Mensal</h4>
+                <p>R$ 8.500</p>
+            </div>
+
+            <div class="card">
+                <h4>Clientes Ativos</h4>
+                <p>120</p>
+            </div>
+
+            <div class="card">
+                <h4>Novos Alunos</h4>
+                <p>25</p>
+            </div>
+
+            <div class="card">
+                <h4>Aulas Agendadas</h4>
+                <p>32</p>
+            </div>
+
+        </section>
+
+        <!-- GRÁFICO -->
+
+        <section class="dashboard-charts">
+
+            <h3>Novos Alunos por Mês</h3>
+
+            <canvas id="monthlyChart"></canvas>
+
+        </section>
+
+        <!-- TABELA -->
+
+        <section class="results-table">
+
+            <h3>Planos Mais Vendidos</h3>
+
+            <table>
+
+                <thead>
+
+                    <tr>
+                        <th>Plano</th>
+                        <th>Clientes</th>
+                        <th>Faturamento</th>
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    <tr>
+                        <td>Plano Básico</td>
+                        <td>45</td>
+                        <td>R$ 4.500</td>
+                    </tr>
+
+                    <tr>
+                        <td>Plano Premium</td>
+                        <td>35</td>
+                        <td>R$ 3.500</td>
+                    </tr>
+
+                    <tr>
+                        <td>Plano VIP</td>
+                        <td>20</td>
+                        <td>R$ 3.000</td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </section>
+
+    </div>
+    
+    <script>
+
+        const ctx = document.getElementById('monthlyChart');
+
+        new Chart(ctx, {
+
+            type: 'bar',
+
+            data: {
+
+                labels: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun'],
+
+                datasets: [{
+                    label: 'Novos Alunos',
+                    data: [12, 19, 8, 15, 10, 20],
+                    borderWidth: 1
+                }]
+
+            },
+
+            options: {
+
+                responsive: true,
+
+                plugins: {
+                    legend: {
+                        display: true
+                    }
+                }
+
+            }
+
+        });
+
+    </script>
+
+</body>
+
+</html>

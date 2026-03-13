@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - PRIME FITNESS</title>
+
+    <link rel="stylesheet" href="dashboard.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+
+<body>
+
+    <!-- SIDEBAR -->
+
+    <div class="sidebar">
+
+        <h2>PRIME FITNESS</h2>
+
+        <ul>
+
+            <li><a href="dashboard.html"><i class="fa-solid fa-chart-line"></i> Dashboard</a></li>
+
+            <li><a href="clients.html"><i class="fa-solid fa-users"></i> Clientes</a></li>
+
+            <li><a href="plans.html"><i class="fa-solid fa-file-invoice"></i> Planos</a></li>
+
+            <li><a href="trainers.html"><i class="fa-solid fa-dumbbell"></i> Treinadores</a></li>
+
+            <li><a href="payments.html"><i class="fa-solid fa-credit-card"></i> Pagamentos</a></li>
+
+            <li><a href="schedule.html"><i class="fa-solid fa-calendar"></i> Agendamentos</a></li>
+
+            <li><a href="relatorio.html"><i class="fa-solid fa-chart-pie"></i> Relatórios</a></li>
+
+            <li><a href="settings.html"><i class="fa-solid fa-gear"></i> Configurações</a></li>
+
+            <li><a href="login.html"><i class="fa-solid fa-right-from-bracket"></i> Sair</a></li>
+
+        </ul>
+
+    </div>
+
+
+    <!-- CONTEÚDO PRINCIPAL -->
+
+    <div class="main-content">
+
+
+        <!-- TOPBAR -->
+
+        <div class="topbar">
+
+            <input type="text" placeholder="Pesquisar...">
+
+            <div class="perfil">
+
+                <i class="fa-solid fa-user"></i>
+
+            </div>
+
+        </div>
+
+
+        <h1>Dashboard</h1>
+
+        <p class="user">Bem-vindo, Allan Gustavo (Admin)</p>
+
+
+        <!-- CARDS -->
+
+        <div class="cards">
+
+            <div class="card">
+                <h3>Clientes Ativos</h3>
+                <p>120</p>
+            </div>
+
+            <div class="card">
+                <h3>Pagamentos do mês</h3>
+                <p>R$ 8.500</p>
+            </div>
+
+            <div class="card">
+                <h3>Treinadores</h3>
+                <p>6</p>
+            </div>
+
+            <div class="card">
+                <h3>Aulas Agendadas</h3>
+                <p>32</p>
+            </div>
+
+        </div>
+
+
+        <!-- GRÁFICO -->
+
+        <div class="grafico-container">
+
+            <h2>Relatório de Alunos</h2>
+
+            <canvas id="graficoAlunos"></canvas>
+
+        </div>
+
+
+        <!-- CLIENTES RECENTES -->
+
+        <div class="clientes-recentes">
+
+            <h2>Clientes Recentes</h2>
+
+            <table>
+
+                <tr>
+                    <th>Nome</th>
+                    <th>Plano</th>
+                    <th>Status</th>
+                </tr>
+
+                <tr>
+                    <td>João Silva</td>
+                    <td>Premium</td>
+                    <td>Ativo</td>
+                </tr>
+
+                <tr>
+                    <td>Maria Souza</td>
+                    <td>Básico</td>
+                    <td>Ativo</td>
+                </tr>
+
+                <tr>
+                    <td>Carlos Lima</td>
+                    <td>Mensal</td>
+                    <td>Pendente</td>
+                </tr>
+
+            </table>
+
+        </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="dashboard.js"></script>
+</body>
+
+</html>

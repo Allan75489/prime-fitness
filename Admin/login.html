@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOGIN - PRIME FITNESS</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* BODY E CONTAINER */
+        body {
+            background: #0a0f1c;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #e5e7eb;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .login-container {
+            display: flex;
+            width: 900px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+        }
+
+        /* LOGIN LEFT */
+        .login-left {
+            flex: 1;
+            background: #111827;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            text-align: center;
+        }
+
+        .login-left img {
+            max-width: 100%;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .welcome-title {
+            color: #00d4ff;
+            font-size: 22px;
+        }
+
+        .social-media {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .social-icons {
+            background: #0f172a;
+            padding: 10px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .social-icons:hover {
+            background: #00d4ff;
+            color: #0a0f1c;
+        }
+
+        .footer-note {
+            font-size: 12px;
+            color: #9ca3af;
+            margin-top: 20px;
+        }
+
+        /* LOGIN RIGHT */
+        .login-right {
+            flex: 1;
+            background: #0a0f1c;
+            padding: 40px;
+        }
+
+        .company-logo img {
+            max-width: 120px;
+            margin-bottom: 15px;
+        }
+
+        .login-subtitle {
+            color: #9ca3af;
+            margin-bottom: 25px;
+        }
+
+        /* FORM */
+        .login-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .form-group {
+            position: relative;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 10px;
+            border-radius: 6px;
+            border: 1px solid #1f2937;
+            background: #0f172a;
+            color: #e5e7eb;
+            outline: none;
+        }
+
+        .form-input:focus {
+            border: 1px solid #00d4ff;
+            box-shadow: 0 0 5px #00d4ff;
+        }
+
+        /* LABEL */
+        .form-group label {
+            position: absolute;
+            left: 10px;
+            top: -10px;
+            background: #0a0f1c;
+            padding: 0 5px;
+            font-size: 12px;
+            color: #9ca3af;
+        }
+
+        /* PASSWORD TOGGLE */
+        .password-toggle {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: #9ca3af;
+        }
+
+        /* BOTÃO LOGIN */
+        .btn-login {
+            padding: 12px;
+            background: #00d4ff;
+            border: none;
+            border-radius: 6px;
+            font-weight: bold;
+            color: #0a0f1c;
+            cursor: pointer;
+            transition: 0.3s;
+            box-shadow: 0 0 10px #00d4ff;
+        }
+
+        .btn-login:hover {
+            background: #2563eb;
+            box-shadow: 0 0 20px #00d4ff;
+        }
+
+        /* LINK ESQUECEU SENHA */
+        .forgot-password-link {
+            display: block;
+            text-align: right;
+            margin-top: 5px;
+            color: #9ca3af;
+            font-size: 12px;
+            text-decoration: none;
+        }
+
+        .forgot-password-link:hover {
+            color: #00d4ff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="login-container">
+
+        <div class="login-left">
+            <h1 class="welcome-title">Bem-vindo ao Portal Administrativo</h1>
+            <img src="./IMG/Banner da empresa.webp" alt="Banner da empresa">
+            <div class="social-media">
+                <div class="social-icons"><i class="fab fa-facebook-f"></i></div>
+                <div class="social-icons"><i class="fab fa-instagram"></i></div>
+                <div class="social-icons"><i class="fab fa-linkedin-in"></i></div>
+            </div>
+            <div class="footer-note">Todos os direitos reservados © 2026 PRIME FITNESS</div>
+        </div>
+
+        <div class="login-right">
+            <div class="login-form-container">
+                <div class="company-logo">
+                    <img src="./IMG/Logo da compania.webp" alt="Logo da empresa">
+                    <p class="login-subtitle">Faça o login pra acessar</p>
+                </div>
+
+                <form class="login-form" action="dashboard.html" method="post">
+                    <div class="form-group">
+                        <input type="text" id="username" class="form-input" required>
+                        <label>Usuário</label>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="input-group">
+                            <input type="password" id="password" class="form-input" required>
+                            <label>Senha</label>
+                            <button type="button" class="password-toggle" onclick="togglePassword()">
+                                <i class="fa-solid fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="remember-me-container">
+                        <input type="checkbox" id="remember-me">
+                        <label> Lembre-me</label>
+                    </div>
+
+                    <button type="submit" class="btn-login">Entrar</button>
+                    <a href="#" class="forgot-password-link">Esqueceu a senha?</a>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        function togglePassword() {
+            const pass = document.getElementById("password");
+            const icon = document.querySelector(".password-toggle i");
+            if (pass.type === "password") {
+                pass.type = "text";
+                icon.classList.replace("fa-eye", "fa-eye-slash");
+            } else {
+                pass.type = "password";
+                icon.classList.replace("fa-eye-slash", "fa-eye");
+            }
+        }
+
+        // LOGIN FIXO
+        const form = document.querySelector(".login-form");
+        form.addEventListener("submit", function (e) {
+            e.preventDefault(); // evita envio real do formulário
+
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+
+            // Usuário e senha fixos
+            if (username === "Allanadmin" && password === "Alan07") {
+                alert("Login aprovado! Redirecionando...");
+                window.location.href = "dashboard.html"; // redireciona para o dashboard
+            } else {
+                alert("Usuário ou senha incorretos!");
+            }
+        });
+    </script>
+</body>
+
+</html>
