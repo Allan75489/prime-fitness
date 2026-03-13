@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configurações | PRIME FITNESS</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="dashboard.css">
+
+    <!-- Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- SIDEBAR -->
+    <aside class="Sidebar">
+
+        <div class="Sidebar-header">
+            <h3 class="brand">
+                <span class="material-icons">fitness_center</span>
+                PRIME FITNESS
+            </h3>
+
+            <button class="menu-toggle">
+                <span class="material-icons">menu</span>
+            </button>
+        </div>
+
+        <nav class="Sidebar-menu">
+            <ul>
+
+                <li><a href="dashboard.html"><span class="material-icons">dashboard</span> Dashboard</a></li>
+
+                <li><a href="Clientes.html"><span class="material-icons">group</span> Clientes</a></li>
+
+                <li><a href="planos.html"><span class="material-icons">assignment</span> Planos</a></li>
+
+                <li><a href="treinadores.html"><span class="material-icons">sports_gymnastics</span> Treinadores</a>
+                </li>
+
+                <li><a href="Pagamentos.html"><span class="material-icons">payments</span> Pagamentos</a></li>
+
+                <li><a href="Agendamentos.html"><span class="material-icons">calendar_month</span> Agendamentos</a></li>
+
+                <li><a href="relatorio.html"><span class="material-icons">bar_chart</span> Relatórios</a></li>
+
+                <li><a href="configuracao.html"><span class="material-icons">settings</span> Configurações</a></li>
+
+                <li><a href="login.html"><i class="fa-solid fa-right-from-bracket"></i> Sair</a></li>
+
+            </ul>
+            </a>
+            </li>
+
+            </ul>
+        </nav>
+
+    </aside>
+
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="main-content">
+
+        <header class="main-header">
+            <h2>Configurações do Sistema</h2>
+        </header>
+
+
+        <section class="settings-section">
+
+            <!-- CONFIGURAÇÕES DA ACADEMIA -->
+            <form class="settings-card">
+
+                <h3>
+                    <span class="material-icons">fitness_center</span>
+                    Informações da Academia
+                </h3>
+
+                <div class="form-group">
+                    <label for="gym-name">Nome da Academia</label>
+                    <input id="gym-name" type="text" value="Prime Fitness">
+                </div>
+
+                <div class="form-group">
+                    <label for="gym-email">Email de Contato</label>
+                    <input id="gym-email" type="email" value="contato@primefitness.com">
+                </div>
+
+                <div class="form-group">
+                    <label for="gym-phone">Telefone</label>
+                    <input id="gym-phone" type="tel" value="(83) 99999-9999">
+                </div>
+
+                <button type="submit">Salvar Alterações</button>
+
+            </form>
+
+
+            <!-- CONTA DO ADMIN -->
+            <form class="settings-card">
+
+                <h3>
+                    <span class="material-icons">person</span>
+                    Conta do Administrador
+                </h3>
+
+                <div class="form-group">
+                    <label for="admin-name">Nome</label>
+                    <input id="admin-name" type="text" value="Allan Gustavo">
+                </div>
+
+                <div class="form-group">
+                    <label for="admin-password">Nova Senha</label>
+                    <input id="admin-password" type="password">
+                </div>
+
+                <div class="form-group">
+                    <label for="admin-password-confirm">Confirmar Senha</label>
+                    <input id="admin-password-confirm" type="password">
+                </div>
+
+                <button type="submit">Atualizar Conta</button>
+
+            </form>
+
+
+            <!-- PREFERÊNCIAS DO SISTEMA -->
+            <form class="settings-card">
+
+                <h3>
+                    <span class="material-icons">tune</span>
+                    Preferências do Sistema
+                </h3>
+
+                <div class="form-group">
+                    <label for="theme">Tema</label>
+
+                    <select id="theme">
+                        <option value="dark">Escuro</option>
+                        <option value="light">Claro</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="notifications">Notificações</label>
+
+                    <select id="notifications">
+                        <option value="on">Ativadas</option>
+                        <option value="off">Desativadas</option>
+                    </select>
+                </div>
+
+                <button type="submit">Salvar Preferências</button>
+
+            </form>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2026 PRIME FITNESS - Sistema Administrativo</p>
+    </footer>
+
+
+    <!-- JS -->
+    <script src="../Admin/dashboard.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagamentos - PRIME FITNESS</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <style>
+        /* RESET */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        /* BODY */
+        body {
+            background: #0f172a;
+            color: white;
+            display: flex;
+        }
+
+        /* SIDEBAR */
+        .sidebar {
+            width: 240px;
+            height: 100vh;
+            background: #020617;
+            padding: 20px;
+            position: fixed;
+        }
+
+        .sidebar h2 {
+            margin-bottom: 20px;
+            color: #38bdf8;
+        }
+
+        .sidebar ul {
+            list-style: none;
+        }
+
+        .sidebar ul li {
+            margin: 15px 0;
+        }
+
+        .sidebar ul li a {
+            text-decoration: none;
+            color: #cbd5f5;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: 0.3s;
+        }
+
+        .sidebar ul li a:hover {
+            color: #38bdf8;
+        }
+
+        /* CONTEÚDO */
+        .conteudo {
+            margin-left: 260px;
+            padding: 30px;
+            width: 100%;
+        }
+
+        /* TITULO */
+        h2 {
+            margin-bottom: 25px;
+            color: #38bdf8;
+        }
+
+        /* CARDS FINANCEIROS */
+        .cards-financeiro {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+
+        .card {
+            background: #1e293b;
+            padding: 25px;
+            border-radius: 10px;
+            width: 220px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+            transition: 0.3s;
+            border-left: 4px solid #38bdf8;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+        }
+
+        .card h3 {
+            font-size: 15px;
+            color: #94a3b8;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            font-size: 26px;
+            font-weight: bold;
+            color: #38bdf8;
+        }
+
+        /* GRÁFICO */
+        .grafico-container {
+            background: #1e293b;
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+        }
+
+        /* TABELA PAGAMENTOS */
+        .tabela-pagamentos {
+            background: #1e293b;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        thead {
+            background: #020617;
+        }
+
+        th,
+        td {
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            color: #cbd5f5;
+            font-size: 14px;
+        }
+
+        tbody tr {
+            border-bottom: 1px solid #334155;
+            transition: 0.3s;
+        }
+
+        tbody tr:hover {
+            background: #273549;
+        }
+
+        /* STATUS */
+        .pago {
+            color: #22c55e;
+            font-weight: bold;
+        }
+
+        .pendente {
+            color: #facc15;
+            font-weight: bold;
+        }
+
+        .atrasado {
+            color: #ef4444;
+            font-weight: bold;
+        }
+
+        /* BOTÃO */
+        .btn {
+            background: #2563eb;
+            color: white;
+            border: none;
+            padding: 10px 18px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #1d4ed8;
+            transform: scale(1.05);
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+        <h2>PRIME FITNESS</h2>
+        <ul>
+            <li><a href="dashboard.html"><i class="fa-solid fa-chart-line"></i> Dashboard</a></li>
+            <li><a href="Clientes.html"><i class="fa-solid fa-users"></i> Clientes</a></li>
+            <li><a href="planos.html"><i class="fa-solid fa-file-invoice"></i> Planos</a></li>
+            <li><a href="treinadores.html"><i class="fa-solid fa-dumbbell"></i> Treinadores</a></li>
+            <li><a href="Pagamentos.html"><i class="fa-solid fa-credit-card"></i> Pagamentos</a></li>
+            <li><a href="Agendamentos.html"><i class="fa-solid fa-calendar"></i> Agendamentos</a></li>
+            <li><a href="relatorio.html"><i class="fa-solid fa-chart-pie"></i> Relatórios</a></li>
+            <li><a href="configuracao.html"><i class="fa-solid fa-gear"></i> Configurações</a></li>
+            <li><a href="login.html"><i class="fa-solid fa-right-from-bracket"></i> Sair</a></li>
+        </ul>
+    </div>
+
+    <!-- CONTEÚDO -->
+    <div class="conteudo">
+
+        <h2>Visão Geral dos Pagamentos</h2>
+
+        <!-- CARDS FINANCEIROS -->
+        <div class="cards-financeiro">
+            <div class="card">
+                <h3>Total Recebido</h3>
+                <p>R$ 52.300</p>
+            </div>
+            <div class="card">
+                <h3>Despesas</h3>
+                <p>R$ 24.200</p>
+            </div>
+            <div class="card">
+                <h3>Lucro</h3>
+                <p>R$ 28.100</p>
+            </div>
+            <div class="card">
+                <h3>Mensalidades Pagas</h3>
+                <p>85 alunos</p>
+            </div>
+        </div>
+
+        <!-- GRÁFICO -->
+        <div class="grafico-container">
+            <canvas id="graficoLucro"></canvas>
+        </div>
+
+        <!-- TABELA PAGAMENTOS -->
+        <div class="tabela-pagamentos">
+            <h2>Pagamentos dos Alunos</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Aluno</th>
+                        <th>Plano</th>
+                        <th>Valor</th>
+                        <th>Status</th>
+                        <th>Ação</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>João Silva</td>
+                        <td>Basico</td>
+                        <td>R$ 79</td>
+                        <td class="pago">Pago</td>
+                        <td><button class="btn">Editar</button></td>
+                    </tr>
+                    <tr>
+                        <td>Maria Souza</td>
+                        <td>Plus</td>
+                        <td>R$109</td>
+                        <td class="pendente">Pendente</td>
+                        <td><button class="btn">Editar</button></td>
+                    </tr>
+                    <tr>
+                        <td>Carlos Lima</td>
+                        <td>Anual</td>
+                        <td>R$ 1.341</td>
+                        <td class="atrasado">Atrasado</td>
+                        <td><button class="btn">Editar</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+    <script>
+        // GRÁFICO DE LUCRO MENSAL
+        const ctx = document.getElementById('graficoLucro').getContext('2d');
+        const graficoLucro = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun'],
+                datasets: [{
+                    label: 'Lucro Mensal (R$)',
+                    data: [8000, 9000, 7500, 10000, 8300, 9500],
+                    backgroundColor: 'rgba(56, 221, 248, 0.2)',
+                    borderColor: '#38bdf8',
+                    borderWidth: 2,
+                    tension: 0.3,
+                    fill: true
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: { labels: { color: '#cbd5f5' } }
+                },
+                scales: {
+                    x: { ticks: { color: '#cbd5f5' }, grid: { color: '#334155' } },
+                    y: { ticks: { color: '#cbd5f5' }, grid: { color: '#334155' } }
+                }
+            }
+        });
+    </script>
+
+</body>
+
+</html>

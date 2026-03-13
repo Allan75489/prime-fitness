@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendamentos - PRIME FITNESS</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <style>
+        /* RESET */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        /* BODY */
+        body {
+            background: #0f172a;
+            color: white;
+            display: flex;
+        }
+
+        /* SIDEBAR */
+        .sidebar {
+            width: 240px;
+            height: 100vh;
+            background: #020617;
+            padding: 20px;
+            position: fixed;
+        }
+
+        .sidebar h2 {
+            margin-bottom: 20px;
+            color: #38bdf8;
+        }
+
+        .sidebar ul {
+            list-style: none;
+        }
+
+        .sidebar ul li {
+            margin: 15px 0;
+        }
+
+        .sidebar ul li a {
+            text-decoration: none;
+            color: #cbd5f5;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: 0.3s;
+        }
+
+        .sidebar ul li a:hover {
+            color: #38bdf8;
+        }
+
+        /* CONTEÚDO */
+        .conteudo {
+            margin-left: 260px;
+            padding: 30px;
+            width: 100%;
+        }
+
+        /* TITULO */
+        h2 {
+            margin-bottom: 25px;
+            color: #38bdf8;
+        }
+
+        /* CARDS ESTATÍSTICAS */
+        .cards-financeiro {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+
+        .card {
+            background: #1e293b;
+            padding: 25px;
+            border-radius: 10px;
+            width: 220px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+            transition: 0.3s;
+            border-left: 4px solid #38bdf8;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+        }
+
+        .card h3 {
+            font-size: 15px;
+            color: #94a3b8;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            font-size: 26px;
+            font-weight: bold;
+            color: #38bdf8;
+        }
+
+        /* GRÁFICO */
+        .grafico-container {
+            background: #1e293b;
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+        }
+
+        /* TABELA AGENDAMENTOS */
+        .tabela-agendamentos {
+            background: #1e293b;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        thead {
+            background: #020617;
+        }
+
+        th,
+        td {
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            color: #cbd5f5;
+            font-size: 14px;
+        }
+
+        tbody tr {
+            border-bottom: 1px solid #334155;
+            transition: 0.3s;
+        }
+
+        tbody tr:hover {
+            background: #273549;
+        }
+
+        /* STATUS */
+        .concluido {
+            color: #22c55e;
+            font-weight: bold;
+        }
+
+        .pendente {
+            color: #facc15;
+            font-weight: bold;
+        }
+
+        .cancelado {
+            color: #ef4444;
+            font-weight: bold;
+        }
+
+        /* BOTÃO */
+        .btn {
+            background: #2563eb;
+            color: white;
+            border: none;
+            padding: 10px 18px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #1d4ed8;
+            transform: scale(1.05);
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+        <h2>PRIME FITNESS</h2>
+        <ul>
+            <li><a href="dashboard.html"><i class="fa-solid fa-chart-line"></i> Dashboard</a></li>
+            <li><a href="Clientes.html"><i class="fa-solid fa-users"></i> Clientes</a></li>
+            <li><a href="planos.html"><i class="fa-solid fa-file-invoice"></i> Planos</a></li>
+            <li><a href="treinadores.html"><i class="fa-solid fa-dumbbell"></i> Treinadores</a></li>
+            <li><a href="Pagamentos.html"><i class="fa-solid fa-credit-card"></i> Pagamentos</a></li>
+            <li><a href="Agendamentos.html"><i class="fa-solid fa-calendar"></i> Agendamentos</a></li>
+            <li><a href="relatorio.html"><i class="fa-solid fa-chart-pie"></i> Relatórios</a></li>
+            <li><a href="configuracao.html"><i class="fa-solid fa-gear"></i> Configurações</a></li>
+            <li><a href="login.html"><i class="fa-solid fa-right-from-bracket"></i> Sair</a></li>
+        </ul>
+    </div>
+
+    <!-- CONTEÚDO -->
+    <div class="conteudo">
+
+        <h2>Visão Geral dos Agendamentos</h2>
+
+        <!-- CARDS ESTATÍSTICAS -->
+        <div class="cards-financeiro">
+            <div class="card">
+                <h3>Total Agendamentos</h3>
+                <p>75</p>
+            </div>
+            <div class="card">
+                <h3>Concluídos</h3>
+                <p>50</p>
+            </div>
+            <div class="card">
+                <h3>Pendentes</h3>
+                <p>20</p>
+            </div>
+            <div class="card">
+                <h3>Cancelados</h3>
+                <p>5</p>
+            </div>
+        </div>
+
+        <!-- GRÁFICO -->
+        <div class="grafico-container">
+            <canvas id="graficoAgendamentos"></canvas>
+        </div>
+
+        <!-- TABELA AGENDAMENTOS -->
+        <div class="tabela-agendamentos">
+            <h2>Lista de Agendamentos</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Aluno</th>
+                        <th>Plano</th>
+                        <th>Data</th>
+                        <th>Hora</th>
+                        <th>Status</th>
+                        <th>Ação</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>João Silva</td>
+                        <td>Mensal</td>
+                        <td>13/03/2026</td>
+                        <td>08:00</td>
+                        <td class="concluido">Concluído</td>
+                        <td><button class="btn">Editar</button></td>
+                    </tr>
+                    <tr>
+                        <td>Maria Souza</td>
+                        <td>Trimestral</td>
+                        <td>14/03/2026</td>
+                        <td>10:00</td>
+                        <td class="pendente">Pendente</td>
+                        <td><button class="btn">Editar</button></td>
+                    </tr>
+                    <tr>
+                        <td>Carlos Lima</td>
+                        <td>Mensal</td>
+                        <td>15/03/2026</td>
+                        <td>09:00</td>
+                        <td class="cancelado">Cancelado</td>
+                        <td><button class="btn">Editar</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+    <script>
+        // GRÁFICO DE AGENDAMENTOS POR SEMANA
+        const ctx = document.getElementById('graficoAgendamentos').getContext('2d');
+        const graficoAgendamentos = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb', 'Dom'],
+                datasets: [{
+                    label: 'Agendamentos',
+                    data: [10, 12, 8, 15, 18, 7, 5],
+                    backgroundColor: 'rgba(56, 221, 248, 0.2)',
+                    borderColor: '#38bdf8',
+                    borderWidth: 2,
+                    tension: 0.3,
+                    fill: true
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: { labels: { color: '#cbd5f5' } }
+                },
+                scales: {
+                    x: { ticks: { color: '#cbd5f5' }, grid: { color: '#334155' } },
+                    y: { ticks: { color: '#cbd5f5' }, grid: { color: '#334155' } }
+                }
+            }
+        });
+    </script>
+
+</body>
+
+</html>
