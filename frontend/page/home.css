@@ -65,12 +65,12 @@ body {
     border-radius: 6px;
     font-weight: bold;
     transition: 0.3s;
-    box-shadow: 0 0 10px #00d4ff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 .btn:hover {
     background: #2563eb;
-    box-shadow: 0 0 20px #00d4ff;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.4);
 }
 
 .btn-secondary {
@@ -104,10 +104,6 @@ body {
     font-size: 48px;
     margin-bottom: 20px;
     color: #00d4ff;
-    text-shadow:
-        0 0 5px #00d4ff,
-        0 0 10px #00d4ff,
-        0 0 20px #00d4ff;
 }
 
 .hero p {
@@ -166,13 +162,13 @@ body {
     padding: 30px;
     border-radius: 10px;
     transition: 0.3s;
-    border: 1px solid transparent;
+    border: 1px solid #1f2937;
 }
 
 .plano-card:hover {
     border: 1px solid #00d4ff;
     transform: translateY(-8px);
-    box-shadow: 0 0 15px #00d4ff33;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.4);
 }
 
 .plano-card h3 {
@@ -192,6 +188,13 @@ body {
     font-size: 22px;
     font-weight: bold;
     color: #00d4ff;
+}
+
+/* CARD DESTAQUE */
+
+.destaque {
+    border: 1px solid #1f2937;
+    transform: scale(1.05);
 }
 
 /* FOOTER */
@@ -303,7 +306,7 @@ body {
     border-radius: 6px;
     font-weight: bold;
     display: none;
-    box-shadow: 0 0 10px #00d4ff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 /* LINKS VOLTAR */
@@ -341,9 +344,6 @@ body {
     font-size: 36px;
     color: #00d4ff;
     margin-bottom: 10px;
-    text-shadow:
-        0 0 5px #00d4ff,
-        0 0 10px #00d4ff;
 }
 
 .planos-header p {
@@ -365,23 +365,24 @@ body {
     padding: 30px;
     border-radius: 10px;
     transition: 0.3s;
-    border: 1px solid transparent;
+    border: 1px solid #1f2937;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
+/* HOVER */
+
 .plano-card:hover {
-    border: 1px solid #00d4ff;
+    border: 1px solid #1f2937;
     transform: translateY(-8px);
-    box-shadow: 0 0 20px #00d4ff33;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.4);
 }
 
 /* CARD DESTAQUE */
 
 .destaque {
-    border: 1px solid #00d4ff;
-    box-shadow: 0 0 15px #00d4ff55;
+    border: 2px solid #00d4ff;
     transform: scale(1.05);
 }
 
@@ -442,12 +443,14 @@ body {
     border-radius: 6px;
     font-weight: bold;
     transition: 0.3s;
-    box-shadow: 0 0 10px #00d4ff;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
 
 .btn-plano:hover {
     background: #2563eb;
-    box-shadow: 0 0 20px #00d4ff;
+}
+.btn-plano {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 /* SOBRE */
@@ -501,7 +504,7 @@ body {
 .card:hover {
     border: 1px solid #00d4ff;
     transform: translateY(-6px);
-    box-shadow: 0 0 15px #00d4ff33;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.4);
 }
 
 .card h3 {
@@ -544,7 +547,7 @@ body {
 
 .post:hover {
     border: 1px solid #00d4ff;
-    box-shadow: 0 0 15px #00d4ff33;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.4);
     transform: translateY(-5px);
 }
 
@@ -585,9 +588,8 @@ body {
     transition: 0.3s;
 }
 
-.btn-home:hover {
-    background: #2563eb;
-    box-shadow: 0 0 20px #00d4ff;
+.btn-home {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 /* AGENDAMENTO */
