@@ -300,7 +300,6 @@ Estudante de Sistemas para Internet
 
 Funcionalidades que serão adicionadas futuramente:
 
-* Sistema de login
 * Integração completa com banco de dados
 * Relatórios financeiros
 * Área do aluno
