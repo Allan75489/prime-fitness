@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # 🏋️ PRIME FITNESS – Sistema de Gestão para Academia
 
 O **Prime Fitness** é um sistema web desenvolvido para auxiliar na gestão de academias.
