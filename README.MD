@@ -308,4 +308,3 @@ Funcionalidades que serão adicionadas futuramente:
 ---
 
 ⭐ Se gostou do projeto, considere dar uma estrela no repositório.
->>>>>>> 86f3430dc506e578a5679418ee31f56f1e294472
