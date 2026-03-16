@@ -2,92 +2,89 @@
 <html lang="pt-BR">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inscrição - Prime Fitness</title>
-    <link rel="stylesheet" href="home.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inscrição - Prime Fitness</title>
+<link rel="stylesheet" href="home.css">
 </head>
 
 <body>
 
-    <section class="inscricao">
+<section class="inscricao">
+<div class="inscricao-container">
 
-        <div class="inscricao-container">
+<h1>Finalize sua Inscrição</h1>
 
-            <h1>Finalize sua Inscrição</h1>
+<p>
+Preencha seus dados abaixo para concluir sua inscrição na Prime Fitness
+e começar sua jornada rumo a uma vida mais saudável.
+</p>
 
-            <p>
-                Preencha seus dados abaixo para concluir sua inscrição na Prime Fitness
-                e começar sua jornada rumo a uma vida mais saudável.
-            </p>
+<form class="form-inscricao" onsubmit="confirmarInscricao(event)">
 
-            <form class="form-inscricao" onsubmit="confirmarInscricao(event)">
+<label>Nome completo</label>
+<input type="text" id="nome" placeholder="Digite seu nome" required>
 
-                <label>Nome completo</label>
-                <input type="text" placeholder="Digite seu nome" required>
+<label>Email</label>
+<input type="email" id="email" placeholder="Digite seu email" required>
 
-                <label>Email</label>
-                <input type="email" placeholder="Digite seu email" required>
+<label>Telefone</label>
+<input type="tel" id="telefone" placeholder="Digite seu telefone" required>
 
-                <label>Telefone</label>
-                <input type="tel" placeholder="Digite seu telefone" required>
+<label>Plano escolhido</label>
+<select id="plano" required>
+<option value="">Selecione seu plano</option>
+<option>Básico</option>
+<option>Plus</option>
+<option>Premium</option>
+<option>Anual</option>
+</select>
 
-                <label>Plano escolhido</label>
-                <select required>
-                    <option value="">Selecione seu plano</option>
-                    <option>Básico</option>
-                    <option>Plus</option>
-                    <option>Premium</option>
-                    <option>Anual</option>
-                </select>
+<label>Forma de pagamento</label>
+<select id="pagamento" required>
+<option value="">Escolha a forma de pagamento</option>
+<option value="pix">Pix</option>
+<option value="credito">Cartão de Crédito</option>
+<option value="debito">Cartão de Débito</option>
+</select>
 
-                <label>Forma de pagamento</label>
-                <select id="pagamento" required>
-                    <option value="">Escolha a forma de pagamento</option>
-                    <option value="pix">Pix</option>
-                    <option value="credito">Cartão de Crédito</option>
-                    <option value="debito">Cartão de Débito</option>
-                </select>
+<div id="area-pagamento"></div>
 
-                <div id="area-pagamento"></div>
+<button type="submit" class="btn-finalizar">
+Finalizar inscrição
+</button>
 
-                <button type="submit" class="btn-finalizar">
-                    Finalizar inscrição
-                </button>
+<div id="notificacao" class="notificacao">
+✅ Pagamento aprovado! Inscrição confirmada.
+</div>
 
-                <div id="notificacao" class="notificacao">
-                    ✅ Pagamento aprovado! Inscrição confirmada.
-                </div>
+</form>
 
-            </form>
+<a href="planos.html" class="voltar">← Voltar para os planos</a>
+<a href="home.html" class="voltar">← Voltar para a página inicial</a>
 
-            <a href="planos.html" class="voltar">← Voltar para os planos</a>
-            <a href="home.html" class="voltar">← Voltar para a página inicial</a>
+</div>
+</section>
 
-        </div>
+<script>
+const pagamento = document.getElementById("pagamento")
+const area = document.getElementById("area-pagamento")
 
-    </section>
+pagamento.addEventListener("change", function () {
+    let metodo = pagamento.value
+    area.innerHTML = "" // limpa a área
 
-    <script>
-
-        const pagamento = document.getElementById("pagamento")
-        const area = document.getElementById("area-pagamento")
-
-        pagamento.addEventListener("change", function () {
-
-            let metodo = pagamento.value
-
-            if (metodo === "pix") {
-                area.innerHTML = `
-<p> use a chave PIX:</p>
+    if (metodo === "pix") {
+        area.innerHTML = `
+<p>Use a chave PIX:</p>
 <strong>primefitness@pix.com</strong>
 `
-            }
-
-            if (metodo === "credito") {
-                area.innerHTML = `
+    } 
+    else if (metodo === "credito") {
+        area.innerHTML = `
 <label>Número do cartão</label>
-<input type="text" placeholder="0000 0000 0000 0000">
+<input type="text" id="numero-cartao" placeholder="0000 0000 0000 0000">
+<div id="bandeira-cartao" style="margin:5px 0;font-weight:bold;"></div>
 
 <label>Validade</label>
 <input type="text" placeholder="MM/AA">
@@ -95,30 +92,70 @@
 <label>CVV</label>
 <input type="text" placeholder="123">
 `
-            }
 
-            if (metodo === "debito") {
-                area.innerHTML = `
+        // espera o input ser adicionado
+        setTimeout(() => {
+            const numeroCartao = document.getElementById("numero-cartao")
+            const bandeira = document.getElementById("bandeira-cartao")
+
+            numeroCartao.addEventListener("input", function(){
+                let numero = numeroCartao.value.replace(/\s/g,'') // remove espaços
+
+                if(numero.startsWith("4")){
+                    bandeira.innerHTML = "💳 Visa"
+                }
+                else if(numero.match(/^5[1-5]/)){
+                    bandeira.innerHTML = "💳 Mastercard"
+                }
+                else if(numero.match(/^3[47]/)){
+                    bandeira.innerHTML = "💳 American Express"
+                }
+                else if(numero.match(/^(4011|4312|4389|4514|4576|5041|6277|6362|6363)/)){
+                    bandeira.innerHTML = "💳 Elo"
+                }
+                else if(numero.match(/^(6062|3841)/)){
+                    bandeira.innerHTML = "💳 Hipercard"
+                }
+                else{
+                    bandeira.innerHTML = ""
+                }
+            })
+        }, 100)
+    }
+    else if (metodo === "debito") {
+        area.innerHTML = `
 <label>Número do cartão</label>
 <input type="text" placeholder="0000 0000 0000 0000">
 
 <label>Senha</label>
 <input type="password" placeholder="****">
 `
-            }
+    }
+})
 
+function confirmarInscricao(event) {
+    event.preventDefault()
+
+    const nome = document.getElementById("nome").value
+    const plano = document.getElementById("plano").value
+
+    fetch("http://127.0.0.1:5000/alunos", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            nome: nome,
+            idade: 20,
+            plano: plano
         })
-
-        function confirmarInscricao(event) {
-
-            event.preventDefault()
-
-            document.getElementById("notificacao").style.display = "block"
-
-        }
-
-    </script>
+    })
+    .then(res => res.json())
+    .then(data => {
+        document.getElementById("notificacao").style.display = "block"
+    })
+}
+</script>
 
 </body>
-
 </html>
